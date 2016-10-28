@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var cssnext = require('postcss-cssnext');
 var postcssFocus = require('postcss-focus');
 var postcssReporter = require('postcss-reporter');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -23,28 +24,30 @@ module.exports = {
   output: {
     path: __dirname,
     filename: 'app.js',
-    publicPath: 'http://0.0.0.0:8000/',
+    publicPath: '/',
   },
 
   resolve: {
     extensions: ['', '.js', '.jsx'],
     modules: [
       'client',
-      'node_modules',
+      'node_modules'
     ],
   },
 
   module: {
     loaders: [
-      {
+      /*{
         test: /\.css$/,
         exclude: /node_modules/,
         loader: 'style-loader!css-loader?localIdentName=[name]__[local]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader',
-      }, {
+      }*/
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')}
+/*      , {
         test: /\.css$/,
         include: /node_modules/,
         loaders: ['style-loader', 'css-loader'],
-      }, {
+      }*/, {
         test: /\.jsx*$/,
         exclude: [/node_modules/, /.+\.config.js/],
         loader: 'babel',
@@ -71,6 +74,7 @@ module.exports = {
         'NODE_ENV': JSON.stringify('development'),
       }
     }),
+    new ExtractTextPlugin("styles.css")
   ],
 
   postcss: () => [

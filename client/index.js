@@ -6,29 +6,38 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import App from './App';
 import { configureStore } from './store';
+import injectTapEventPlugin from 'react-tap-event-plugin'
+
+/**
+ * initialize tap event to work with material-ui
+ * and to remove the 300ms delay on touch devices.
+ * to use onTouchTap() instead of onClick()
+ * */
+injectTapEventPlugin();
 
 // Initialize store
 const store = configureStore(window.__INITIAL_STATE__);
-const mountApp = document.getElementById('root');
+
+const mountApp = document.getElementById('app');
 
 render(
-  <AppContainer>
-    <App store={store} />
-  </AppContainer>,
-  mountApp
+    <AppContainer>
+        <App store={store} />
+    </AppContainer>,
+    mountApp
 );
 
 // For hot reloading of react components
 if (module.hot) {
-  module.hot.accept('./App', () => {
-    // If you use Webpack 2 in ES modules mode, you can
-    // use <App /> here rather than require() a <NextApp />.
-    const NextApp = require('./App').default; // eslint-disable-line global-require
-    render(
-      <AppContainer>
-        <NextApp store={store} />
-      </AppContainer>,
-      mountApp
-    );
-  });
+    module.hot.accept('./App', () => {
+        // If you use Webpack 2 in ES modules mode, you can
+        // use <App /> here rather than require() a <NextApp />.
+        const NextApp = require('./App').default; // eslint-disable-line global-require
+        render(
+            <AppContainer>
+                <NextApp store={store} />
+            </AppContainer>,
+            mountApp
+        );
+    });
 }

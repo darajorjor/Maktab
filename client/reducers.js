@@ -1,16 +1,12 @@
-/**
- * Root Reducer
- */
+import {routerReducer} from 'react-router-redux'
 import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form'
+import MSnackbar from './common/MSnackBar/MSnackbarReducer.js'
+import Wrapper from './wrapper/WrapperReducer.js'
 
-// Import Reducers
-import app from './modules/App/AppReducer';
-import posts from './modules/Post/PostReducer';
-import intl from './modules/Intl/IntlReducer';
-
-// Combine all reducers into one root reducer
 export default combineReducers({
-  app,
-  posts,
-  intl,
+    routing: routerReducer,
+    form: formReducer,
+    MSnackbar,
+    Wrapper
 });

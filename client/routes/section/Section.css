@@ -1,0 +1,10 @@
+.point {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: rgb(255, 87, 34);
+    color: #fff;
+    border-radius: 100%;
+    padding: 5px 10px;
+    font-size: 22px
+}

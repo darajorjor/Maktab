@@ -1,0 +1,22 @@
+.sliderWrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.slider {
+    padding-top: 50px;
+    width: 3000px;
+    overflow: hidden;
+}
+
+.slider:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+.slider:before {
+    content: '';
+    display: block;
+    margin-top: -1.25em;
+}

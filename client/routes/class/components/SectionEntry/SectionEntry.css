@@ -1,0 +1,43 @@
+.wrapper {
+    position: relative;
+}
+
+.icon {
+    border-radius: 100%;
+    background-color: #e1e1e1;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: auto;
+}
+
+.titleArea {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.point {
+    color: rgb(255, 87, 34);
+    display: inline-block;
+    margin-bottom: -8px;
+}
+
+.title {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.wrapper {
+    width: 150px;
+    display: block;
+    margin: auto;
+}
+
+.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+}

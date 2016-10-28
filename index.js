@@ -20,7 +20,13 @@ if (process.env.NODE_ENV === 'production') {
       ]
     ]
   });
+
   require('babel-polyfill');
+
+
+  require.extensions['.css'] = () => {
+    return;
+  };
 
   require('./server/server');
 }

@@ -1,0 +1,9 @@
+.footerLink {
+    display: block !important;
+    margin: auto !important;
+    color: #fff !important;
+}
+
+.footerRow h3 {
+    color: #33691E;
+}

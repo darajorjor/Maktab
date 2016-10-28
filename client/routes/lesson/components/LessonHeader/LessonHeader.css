@@ -1,0 +1,11 @@
+.exit {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.tips {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}

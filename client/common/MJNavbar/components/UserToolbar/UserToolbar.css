@@ -1,0 +1,13 @@
+.badge {
+    padding: 0 !important
+}
+
+.search {
+    background-color: white !important
+}
+
+.searchIcon {
+    position: absolute !important;
+    right: 398px;
+    top: 8px
+}

@@ -1,0 +1,29 @@
+/*
+ * Copyright (c) 2016. Mehdi JorJor all rights reserved
+ */
+
+.card {
+    width: 300px;
+    height: 350px;
+    display: inline-block;
+    overflow: hidden;
+    margin: .75em 1.5em;
+    position: relative;
+}
+
+.completedDiv {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+}
+
+.doneIcon {
+    position: absolute;
+    right: 40%;
+    top: 40%;
+    width: 50px !important;
+    height: 50px !important
+}
